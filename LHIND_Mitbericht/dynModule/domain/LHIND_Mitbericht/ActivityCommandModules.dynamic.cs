@@ -234,7 +234,7 @@ namespace LHIND.Mitbericht
                         .FormatWith(fc));
 
                 //Read specialdata and document values
-                var terminAmtObject = fc.GetProperty("#LHIND_Mitbericht_BezeichnerDU1").ToString();
+                var terminAmtObject = fc.GetProperty("#LHIND_Mitbericht_BezeichnerDU2").ToString();
                 var terminAmt = "";
                 if (terminAmtObject != null)
                     terminAmt = terminAmtObject;
