@@ -320,7 +320,6 @@ namespace LHIND.Mitbericht
                         incoming.SetProperty("#LHIND_Mitbericht_VE_istFederfuehrung", isFf);
                     }
 
-                    logger.Error("ActiveContent – Title: " + title + "; fileContentObjects.Count(): " + fileContentObjects.Count());
                     foreach (var fileContentObject in fileContentObjects)
                     {
                         var copyDocument = (IDocument)Document.NewObject(incoming);
