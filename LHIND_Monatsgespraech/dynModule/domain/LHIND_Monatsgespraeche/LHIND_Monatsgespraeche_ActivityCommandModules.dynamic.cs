@@ -1,6 +1,6 @@
 // This file is part of Acta Nova (www.acta-nova.eu)
 // Copyright (c) rubicon IT GmbH, www.rubicon.eu
-// Version 2.2 - Philipp Rössler, Mohammad-Farid Modarressi - 28.10.2019
+// Version 2.2.1 - Philipp Rössler, Mohammad-Farid Modarressi - 30.10.2019
 
 using System;
 using System.Collections.Generic;
@@ -210,7 +210,9 @@ namespace LHIND.Monatsgespraeche
                         .FormatWith(sourceFileCase));
 
                 //Read specialdata and document values
-                var terminGs = sourceFileCase.GetProperty("#LHIND_Monatsgespraeche_TerminGs") as string;
+                var terminGs = sourceFileCase.GetProperty("#LHIND_Monatsgespraeche_TerminGs").ToString() ?? "";
+
+                var datum = sourceFileCase.GetProperty("#LHIND_Monatsgespraeche_Datum").ToString() ?? "";
 
                 var title = sourceFileCase.GetProperty("#LHIND_Monatsgespraeche_TitelIdp") as string;
 
@@ -221,10 +223,7 @@ namespace LHIND.Monatsgespraeche
 
                 var auftrag = sourceFileCase.GetProperty("#LHIND_Monatsgespraeche_Auftrag") as string;
 
-                var bemerkung = sourceFileCase.GetProperty("#LHIND_Monatsgespraeche_Bemerkungen") as string; 
-               
-
-                var datum = sourceFileCase.GetProperty("#LHIND_Monatsgespraeche_Datum") as string;
+                var bemerkung = sourceFileCase.GetProperty("#LHIND_Monatsgespraeche_Bemerkungen") as string;
 
                 var rueckfragenAnObject = sourceFileCase.GetProperty("#LHIND_Monatsgespraeche_RueckfragenAn") as TenantUser;
                 var rueckfragenAn = "";
